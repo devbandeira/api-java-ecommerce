@@ -57,14 +57,13 @@ public class ProdutosServiceImpl implements IBookingService<ProdutosModel> {
         }
         return false;
     }
+
 //alex
-    @Override
     public List<ProdutosModel> findByCategoriaModel(CategoriaModel categoria){
         return produtosRepository.findByCategoriaModel(categoria);
 
     }
 
-    @Override
     public List<ProdutosModel> findByCidadesModel(CidadesModel cidade){
         return produtosRepository.findByCidadesModel(cidade);
     }

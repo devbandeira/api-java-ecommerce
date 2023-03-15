@@ -23,20 +23,16 @@ import java.util.Optional;
 @RestController
 public class ProdutosController {
 
-    private ProdutosServiceImpl produtosService;
-    private CategoriaServiceImpl categoriaService;
-    private CidadesServiceImpl cidadesService;
+    final private ProdutosServiceImpl produtosService;
+    final private CategoriaServiceImpl categoriaService;
+    final private CidadesServiceImpl cidadesService;
 
     @Autowired
-    public ProdutosController(ProdutosServiceImpl produtosService) {
+    public ProdutosController(ProdutosServiceImpl produtosService, CategoriaServiceImpl categoriaService, CidadesServiceImpl cidadesService) {
         this.produtosService = produtosService;
-    }
-    public ProdutosController(CategoriaServiceImpl categoriaService) { this.categoriaService = categoriaService;}
-    public ProdutosController(CidadesServiceImpl cidadesService) {
+        this.categoriaService = categoriaService;
         this.cidadesService = cidadesService;
     }
-
-
 
     /// POST
     @PostMapping("/produtos/salvar")
@@ -92,6 +88,7 @@ public class ProdutosController {
 //            throw new ResourceNotFoundException("Erro ao buscar o produto com a cidade " + id);
 //        }
 //    }
+
 
 
     // GET BY ID
